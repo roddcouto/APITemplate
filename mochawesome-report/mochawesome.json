@@ -1,0 +1,370 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 11,
+    "passes": 11,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-11-09T01:36:45.657Z",
+    "end": "2020-11-09T01:36:53.315Z",
+    "duration": 7658,
+    "testsRegistered": 11,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3d7507fc-e27f-44e1-81d0-6aac646505d3",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b43a5545-d5ee-426d-8dfe-607cf8847d33",
+          "title": "DELETE /users",
+          "fullFile": "C:\\Downloads\\APITemplate\\test\\delete.test.js",
+          "file": "\\test\\delete.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete the selected user",
+              "fullTitle": "DELETE /users should delete the selected user",
+              "timedOut": false,
+              "duration": 720,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.delete(rotaUsers)\n.expect(204)",
+              "err": {},
+              "uuid": "bbb5f2ef-43dc-496f-ae89-5605319c78de",
+              "parentUUID": "b43a5545-d5ee-426d-8dfe-607cf8847d33",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bbb5f2ef-43dc-496f-ae89-5605319c78de"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 720,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "dbfc31e7-3a5e-40be-954e-89441be0970e",
+          "title": "GET /users",
+          "fullFile": "C:\\Downloads\\APITemplate\\test\\get.test.js",
+          "file": "\\test\\get.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should returt the list users",
+              "fullTitle": "GET /users should returt the list users",
+              "timedOut": false,
+              "duration": 431,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.get(rotaUsers)\n.expect('Content-Type', /json/)\n.expect(200)\n       \nvar resposta = response.body.data[0]\nassert.equal(resposta.id, 7)\nassert.equal(resposta.email, 'michael.lawson@reqres.in')\nassert.equal(resposta.first_name, 'Michael')\nassert.equal(resposta.last_name, 'Lawson')\nassert.equal(resposta.avatar, 'https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg')",
+              "err": {},
+              "uuid": "8c5f8684-d769-4947-92ea-1350c73f26a3",
+              "parentUUID": "dbfc31e7-3a5e-40be-954e-89441be0970e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should returt a single user",
+              "fullTitle": "GET /users should returt a single user",
+              "timedOut": false,
+              "duration": 397,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.get('/users/2')\n.expect('Content-Type', /json/)\n.expect(200)\nvar resposta = response.body\nassert.equal(resposta.data.id, 2)\nassert.equal(resposta.data.email, 'janet.weaver@reqres.in')\nassert.equal(resposta.data.first_name, 'Janet')\nassert.equal(resposta.data.last_name, 'Weaver')\nassert.equal(resposta.data.avatar, 'https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg')\nassert.equal(resposta.ad.company,'StatusCode Weekly')\nassert.equal(resposta.ad.url,'http://statuscode.org/')\nassert.equal(resposta.ad.text,'A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things.')",
+              "err": {},
+              "uuid": "1b34b14b-dd52-4364-9383-93945227f493",
+              "parentUUID": "dbfc31e7-3a5e-40be-954e-89441be0970e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return user not found",
+              "fullTitle": "GET /users should return user not found",
+              "timedOut": false,
+              "duration": 416,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.get('/users/23')\n.expect('Content-Type', /json/)\n.expect(404)",
+              "err": {},
+              "uuid": "c66fa08b-6394-4c1c-b4ce-e1b752c77122",
+              "parentUUID": "dbfc31e7-3a5e-40be-954e-89441be0970e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8c5f8684-d769-4947-92ea-1350c73f26a3",
+            "1b34b14b-dd52-4364-9383-93945227f493",
+            "c66fa08b-6394-4c1c-b4ce-e1b752c77122"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1244,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b7029c18-6fd8-4565-a96c-dea0e8d53aec",
+          "title": "PATCH /users",
+          "fullFile": "C:\\Downloads\\APITemplate\\test\\patch.test.js",
+          "file": "\\test\\patch.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update the user job with patch request",
+              "fullTitle": "PATCH /users should update the user job with patch request",
+              "timedOut": false,
+              "duration": 690,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.patch(rotaUsers)\n.send({\n    'name': 'morpheus',\n    'job': 'zion resident'\n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(200)\n       \nvar resposta = response.body\nassert.equal(resposta.name, 'morpheus')\nassert.equal(resposta.job, 'zion resident')",
+              "err": {},
+              "uuid": "0e93be67-869b-4d4d-9e43-a15148694438",
+              "parentUUID": "b7029c18-6fd8-4565-a96c-dea0e8d53aec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0e93be67-869b-4d4d-9e43-a15148694438"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 690,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ba56e854-8ea3-40ad-b2c7-c3b31f229716",
+          "title": "POST /users",
+          "fullFile": "C:\\Downloads\\APITemplate\\test\\post.test.js",
+          "file": "\\test\\post.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a new user",
+              "fullTitle": "POST /users should create a new user",
+              "timedOut": false,
+              "duration": 664,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.post(rotaUsers)\n.send({\n    'name': 'morpheus',\n    'job': 'leader'\n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(201)\n       \nvar resposta = response.body\nassert.equal(resposta.name, 'morpheus')\nassert.equal(resposta.job, 'leader')",
+              "err": {},
+              "uuid": "baf65a13-8e90-4f8b-b65d-bf3f9f98e189",
+              "parentUUID": "ba56e854-8ea3-40ad-b2c7-c3b31f229716",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return valid register",
+              "fullTitle": "POST /users should return valid register",
+              "timedOut": false,
+              "duration": 664,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.post('/register')\n.send({\n    'email': 'eve.holt@reqres.in',\n    'password': 'pistol'\n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(200)\nvar resposta = response.body\nassert.equal(resposta.id, 4)\nassert.equal(resposta.token, 'QpwL5tke4Pnpja7X4')",
+              "err": {},
+              "uuid": "01fe4f17-67dc-45e2-bfae-ad5e112fc053",
+              "parentUUID": "ba56e854-8ea3-40ad-b2c7-c3b31f229716",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return invalid register",
+              "fullTitle": "POST /users should return invalid register",
+              "timedOut": false,
+              "duration": 736,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.post('/register')\n.send({\n    'email': 'sydney@fife'\n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(400)\nvar resposta = response.body\nassert.equal(resposta.error, 'Missing password')",
+              "err": {},
+              "uuid": "22b71df0-aea1-47dd-aa56-99b39e66e62d",
+              "parentUUID": "ba56e854-8ea3-40ad-b2c7-c3b31f229716",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return valid login",
+              "fullTitle": "POST /users should return valid login",
+              "timedOut": false,
+              "duration": 672,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.post('/login')\n.send({\n    'email': 'eve.holt@reqres.in',\n    'password': 'cityslicka'\n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(200)\nvar resposta = response.body\nassert.equal(resposta.token, 'QpwL5tke4Pnpja7X4')",
+              "err": {},
+              "uuid": "1dada222-460f-442d-b3fa-b54c75ad0447",
+              "parentUUID": "ba56e854-8ea3-40ad-b2c7-c3b31f229716",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return invalid login",
+              "fullTitle": "POST /users should return invalid login",
+              "timedOut": false,
+              "duration": 534,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.post('/login')\n.send({\n    'email': 'peter@klaven' \n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(400)\nvar resposta = response.body\nassert.equal(resposta.error, 'Missing password')",
+              "err": {},
+              "uuid": "476ac0b3-5083-4532-9259-ac30c30a596b",
+              "parentUUID": "ba56e854-8ea3-40ad-b2c7-c3b31f229716",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "baf65a13-8e90-4f8b-b65d-bf3f9f98e189",
+            "01fe4f17-67dc-45e2-bfae-ad5e112fc053",
+            "22b71df0-aea1-47dd-aa56-99b39e66e62d",
+            "1dada222-460f-442d-b3fa-b54c75ad0447",
+            "476ac0b3-5083-4532-9259-ac30c30a596b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3270,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d47ad9d0-3296-4560-9f45-869721ab1e77",
+          "title": "PUT /users",
+          "fullFile": "C:\\Downloads\\APITemplate\\test\\put.test.js",
+          "file": "\\test\\put.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update the user job with put request",
+              "fullTitle": "PUT /users should update the user job with put request",
+              "timedOut": false,
+              "duration": 1672,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var response = await request(site)\n.put(rotaUsers)\n.send({\n    'name': 'morpheus',\n    'job': 'zion resident'\n})\n.set('Accept', 'application/json')\n.expect('Content-Type', /json/)\n.expect(200)\n       \nvar resposta = response.body\nassert.equal(resposta.name, 'morpheus')\nassert.equal(resposta.job, 'zion resident')",
+              "err": {},
+              "uuid": "a87cb322-8d8c-4543-97d7-a58f7b4f5186",
+              "parentUUID": "d47ad9d0-3296-4560-9f45-869721ab1e77",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a87cb322-8d8c-4543-97d7-a58f7b4f5186"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1672,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "apitemplate",
+  "version": "1.0.0",
+  "description": "teste de api com supertest",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter mochawesome"
+  },
+  "author": "Rodrigo Couto",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "supertest": "^6.0.1"
+  }
+}
