@@ -20,3 +20,6 @@ Assim instalará todas as dependências com apenas um comando.
 
 ### Execução dos testes
 Para executar basta executar o comando **npm test**
+
+### Observação
+A API utilizada é uma api pública feita para testes de API, chama-se [reqres](https://reqres.in/)
